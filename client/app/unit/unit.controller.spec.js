@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: MovieCtrl', function () {
+describe('Controller: UnitCtrl', function () {
 
   // load the controller's module
   beforeEach(module('crudApp'));
 
-  var MovieCtrl, scope;
+  var UnitCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MovieCtrl = $controller('MovieCtrl', {
+    UnitCtrl = $controller('UnitCtrl', {
       $scope: scope
     });
   }));

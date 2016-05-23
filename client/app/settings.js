@@ -6,9 +6,9 @@ angular.module('crudApp')
   menu: {
     pages : [
   //    {text:'Books', icon: 'book', url: 'book', authenticate: true},
-      {text:'1085 Boylston', icon: 'book', url: 'book', authenticate: true},
-  //    {text:'Movies', icon: 'movie', url: 'movie', authenticate: true},
-      {text:'80 Winter Street', icon: 'movie', url: 'movie', authenticate: true},
+  //    {text:'1085 Boylston', icon: 'book', url: 'book', authenticate: true},
+  //    {text:'Units', icon: 'unit', url: 'unit', authenticate: true},
+      {text:'Units', icon: 'unit', url: 'unit', authenticate: true},
 //      {text:'Contacts', icon: 'contacts', url: 'contact', authenticate: true},
 //      {text:'Customers', icon: 'people', url: 'customer', authenticate: true},
 //      {text:'Tasks', icon: 'assignment', url: 'task', authenticate: true},

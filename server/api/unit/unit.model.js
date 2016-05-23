@@ -1,7 +1,7 @@
 'use strict';
 
 export default function(sequelize, DataTypes) {
-  return sequelize.define('Movie', {
+  return sequelize.define('Unit', {
     _id: {
       type: DataTypes.INTEGER,
       allowNull: false,

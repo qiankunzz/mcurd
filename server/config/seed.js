@@ -7,7 +7,7 @@
 import sqldb from '../sqldb';
 var User = sqldb.User;
 var Book = sqldb.Book;
-var Movie = sqldb.Movie;
+var Unit = sqldb.Unit;
 var Contact = sqldb.Contact;
 var Customer = sqldb.Customer;
 var Task = sqldb.Task;
@@ -58,12 +58,12 @@ Book.sync()
 }
 }))
 
-    Movie.sync()
-    .then(()=>Movie.find().then((data,err) => {
+    Unit.sync()
+    .then(()=>Unit.find().then((data,err) => {
       if(!data){
-        Movie.destroy({ where: {} })
+        Unit.destroy({ where: {} })
           .then(() => {
-    Movie.bulkCreate(
+    Unit.bulkCreate(
       [
         { name: 'The Martian', production: 'Ridley Scott', rating:'8.1', genre: 'Thriller', language: 'English', releaseDate: '2015-10-02' },
         { name: 'Star Wars : The Force Awakens', production: 'J.J Abrams', rating:'8.5', genre: 'Action', language: 'English', releaseDate: '2015-12-18' },
@@ -78,7 +78,7 @@ Book.sync()
         { name: 'Avengers : Age of Ultron', production: 'Joss whedon', rating:'7.6', genre: 'Action', language: 'English', releaseDate: '2015-05-01' }
       ])
       .then(() => {
-        console.log('finished populating movies');
+        console.log('finished populating units');
       })
     })
 }

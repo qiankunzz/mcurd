@@ -11,7 +11,7 @@ export default function(app) {
   // Insert routes below
   app.use('/api/media', require('./api/media'));
   app.use('/api/sendmail', require('./api/sendmail'));
-  app.use('/api/movies', require('./api/movie'));
+  app.use('/api/units', require('./api/unit'));
   app.use('/api/books', require('./api/book'));
   app.use('/api/customers', require('./api/customer'));
   app.use('/api/contacts', require('./api/contact'));

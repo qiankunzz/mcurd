@@ -15,7 +15,7 @@ var db = {
 
 // Insert models below
 db.Media = db.sequelize.import('../api/media/media.model');
-db.Movie = db.sequelize.import('../api/movie/movie.model');
+db.Unit = db.sequelize.import('../api/unit/unit.model');
 db.Book = db.sequelize.import('../api/book/book.model');
 db.Customer = db.sequelize.import('../api/customer/customer.model');
 db.Contact = db.sequelize.import('../api/contact/contact.model');
