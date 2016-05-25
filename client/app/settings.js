@@ -5,12 +5,14 @@ angular.module('crudApp')
   demo: false,
   menu: {
     pages : [
-      {text:'Books', icon: 'book', url: 'book', authenticate: true},
-      {text:'Movies', icon: 'movie', url: 'movie', authenticate: true},
-      {text:'Contacts', icon: 'contacts', url: 'contact', authenticate: true},
-      {text:'Customers', icon: 'people', url: 'customer', authenticate: true},
-      {text:'Tasks', icon: 'assignment', url: 'task', authenticate: true},
-      {text:'Documentation', icon: 'description', url: 'documentation'},
+  //    {text:'Books', icon: 'book', url: 'book', authenticate: true},
+  //    {text:'1085 Boylston', icon: 'book', url: 'book', authenticate: true},
+  //    {text:'Units', icon: 'unit', url: 'unit', authenticate: true},
+      {text:'Your Units', icon: 'home', url: 'unit', authenticate: true},
+//      {text:'Contacts', icon: 'contacts', url: 'contact', authenticate: true},
+//      {text:'Customers', icon: 'people', url: 'customer', authenticate: true},
+//      {text:'Tasks', icon: 'assignment', url: 'task', authenticate: true},
+//     {text:'Documentation', icon: 'description', url: 'documentation'},
       {text:'Media Library', icon: 'photo_library', url: 'media', authenticate: true}
     ],
     auth : [

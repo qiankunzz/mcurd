@@ -4,7 +4,7 @@
 
 'use strict';
 
-var MovieEvents = require('./movie.events');
+var UnitEvents = require('./unit.events');
 
 // Model events to emit
 var events = ['save', 'remove'];
@@ -13,9 +13,9 @@ export function register(socket) {
   // Bind model events to socket events
   for (var i = 0, eventsLength = events.length; i < eventsLength; i++) {
     var event = events[i];
-    var listener = createListener('movie:' + event, socket);
+    var listener = createListener('unit:' + event, socket);
 
-    MovieEvents.on(event, listener);
+    UnitEvents.on(event, listener);
     socket.on('disconnect', removeListener(event, listener));
   }
 }
@@ -29,6 +29,6 @@ function createListener(event, socket) {
 
 function removeListener(event, listener) {
   return function() {
-    MovieEvents.removeListener(event, listener);
+    UnitEvents.removeListener(event, listener);
   };
 }

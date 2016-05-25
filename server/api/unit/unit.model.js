@@ -1,7 +1,7 @@
 'use strict';
 
 export default function(sequelize, DataTypes) {
-  return sequelize.define('Movie', {
+  return sequelize.define('Unit', {
     _id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -10,15 +10,16 @@ export default function(sequelize, DataTypes) {
     },
     image: DataTypes.STRING,
     name: DataTypes.STRING,
-    production: DataTypes.STRING,
+//    production: DataTypes.STRING,
     releaseDate: DataTypes.STRING,
     stars: DataTypes.STRING,
-    rating: DataTypes.FLOAT,
-    genre: DataTypes.STRING,
+    price: DataTypes.FLOAT,
+  //  genre: DataTypes.STRING,
     language: DataTypes.STRING,
     active: DataTypes.BOOLEAN,
     updatedAt: DataTypes.STRING,
     createdAt: DataTypes.STRING,
-    modifiedBy: DataTypes.STRING
+    modifiedBy: DataTypes.STRING,
+    unittype: DataTypes.STRING
   });
 }

@@ -3,40 +3,40 @@
 var app = require('../..');
 import request from 'supertest';
 
-var newMovie;
+var newUnit;
 
-describe('Movie API:', function() {
+describe('Unit API:', function() {
 
-  describe('GET /api/movies', function() {
-    var movies;
+  describe('GET /api/units', function() {
+    var units;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/movies')
+        .get('/api/units')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          movies = res.body;
+          units = res.body;
           done();
         });
     });
 
     it('should respond with JSON array', function() {
-      movies.should.be.instanceOf(Array);
+      units.should.be.instanceOf(Array);
     });
 
   });
 
-  describe('POST /api/movies', function() {
+  describe('POST /api/units', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/movies')
+        .post('/api/units')
         .send({
-          name: 'New Movie',
-          info: 'This is the brand new movie!!!'
+          name: 'New Unit',
+          info: 'This is the brand new unit!!!'
         })
         .expect(201)
         .expect('Content-Type', /json/)
@@ -44,55 +44,55 @@ describe('Movie API:', function() {
           if (err) {
             return done(err);
           }
-          newMovie = res.body;
+          newUnit = res.body;
           done();
         });
     });
 
-    it('should respond with the newly created movie', function() {
-      newMovie.name.should.equal('New Movie');
-      newMovie.info.should.equal('This is the brand new movie!!!');
+    it('should respond with the newly created unit', function() {
+      newUnit.name.should.equal('New Unit');
+      newUnit.info.should.equal('This is the brand new unit!!!');
     });
 
   });
 
-  describe('GET /api/movies/:id', function() {
-    var movie;
+  describe('GET /api/units/:id', function() {
+    var unit;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/movies/' + newMovie._id)
+        .get('/api/units/' + newUnit._id)
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
           if (err) {
             return done(err);
           }
-          movie = res.body;
+          unit = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      movie = {};
+      unit = {};
     });
 
-    it('should respond with the requested movie', function() {
-      movie.name.should.equal('New Movie');
-      movie.info.should.equal('This is the brand new movie!!!');
+    it('should respond with the requested unit', function() {
+      unit.name.should.equal('New Unit');
+      unit.info.should.equal('This is the brand new unit!!!');
     });
 
   });
 
-  describe('PUT /api/movies/:id', function() {
-    var updatedMovie;
+  describe('PUT /api/units/:id', function() {
+    var updatedUnit;
 
     beforeEach(function(done) {
       request(app)
-        .put('/api/movies/' + newMovie._id)
+        .put('/api/units/' + newUnit._id)
         .send({
-          name: 'Updated Movie',
-          info: 'This is the updated movie!!!'
+          name: 'Updated Unit',
+          info: 'This is the updated unit!!!'
         })
         .expect(200)
         .expect('Content-Type', /json/)
@@ -100,27 +100,27 @@ describe('Movie API:', function() {
           if (err) {
             return done(err);
           }
-          updatedMovie = res.body;
+          updatedUnit = res.body;
           done();
         });
     });
 
     afterEach(function() {
-      updatedMovie = {};
+      updatedUnit = {};
     });
 
-    it('should respond with the updated movie', function() {
-      updatedMovie.name.should.equal('Updated Movie');
-      updatedMovie.info.should.equal('This is the updated movie!!!');
+    it('should respond with the updated unit', function() {
+      updatedUnit.name.should.equal('Updated Unit');
+      updatedUnit.info.should.equal('This is the updated unit!!!');
     });
 
   });
 
-  describe('DELETE /api/movies/:id', function() {
+  describe('DELETE /api/units/:id', function() {
 
     it('should respond with 204 on successful removal', function(done) {
       request(app)
-        .delete('/api/movies/' + newMovie._id)
+        .delete('/api/units/' + newUnit._id)
         .expect(204)
         .end((err, res) => {
           if (err) {
@@ -130,9 +130,9 @@ describe('Movie API:', function() {
         });
     });
 
-    it('should respond with 404 when movie does not exist', function(done) {
+    it('should respond with 404 when unit does not exist', function(done) {
       request(app)
-        .delete('/api/movies/' + newMovie._id)
+        .delete('/api/units/' + newUnit._id)
         .expect(404)
         .end((err, res) => {
           if (err) {

@@ -1,15 +1,15 @@
 /**
- * Movie model events
+ * Unit model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-var Movie = require('../../sqldb').Movie;
-var MovieEvents = new EventEmitter();
+var Unit = require('../../sqldb').Unit;
+var UnitEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-MovieEvents.setMaxListeners(0);
+UnitEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -21,15 +21,15 @@ var events = {
 // Register the event emitter to the model events
 for (var e in events) {
   var event = events[e];
-  Movie.hook(e, emitEvent(event));
+  Unit.hook(e, emitEvent(event));
 }
 
 function emitEvent(event) {
   return function(doc, options, done) {
-    MovieEvents.emit(event + ':' + doc._id, doc);
-    MovieEvents.emit(event, doc);
+    UnitEvents.emit(event + ':' + doc._id, doc);
+    UnitEvents.emit(event, doc);
     done(null);
   }
 }
 
-export default MovieEvents;
+export default UnitEvents;

@@ -1,16 +1,16 @@
 /**
  * Using Rails-like standard naming convention for endpoints.
- * GET     /api/movies              ->  index
- * POST    /api/movies              ->  create
- * GET     /api/movies/:id          ->  show
- * PUT     /api/movies/:id          ->  update
- * DELETE  /api/movies/:id          ->  destroy
+ * GET     /api/units              ->  index
+ * POST    /api/units              ->  create
+ * GET     /api/units/:id          ->  show
+ * PUT     /api/units/:id          ->  update
+ * DELETE  /api/units/:id          ->  destroy
  */
 
 'use strict';
 
 import _ from 'lodash';
-import {Movie} from '../../sqldb';
+import {Unit} from '../../sqldb';
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -58,16 +58,16 @@ function handleError(res, statusCode) {
   };
 }
 
-// Gets a list of Movies
+// Gets a list of units
 export function index(req, res) {
-  Movie.findAll()
+  Unit.findAll()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
-// Gets a single Movie from the DB
+// Gets a single unit from the DB
 export function show(req, res) {
-  Movie.find({
+  unit.find({
     where: {
       _id: req.params.id
     }
@@ -77,19 +77,19 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
-// Creates a new Movie in the DB
+// Creates a new Unit in the DB
 export function create(req, res) {
-  Movie.create(req.body)
+  Unit.create(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
-// Updates an existing Movie in the DB
+// Updates an existing unit in the DB
 export function update(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-  Movie.find({
+  Unit.find({
     where: {
       _id: req.params.id
     }
@@ -100,9 +100,9 @@ export function update(req, res) {
     .catch(handleError(res));
 }
 
-// Deletes a Movie from the DB
+// Deletes a Unit from the DB
 export function destroy(req, res) {
-  Movie.find({
+  Unit.find({
     where: {
       _id: req.params.id
     }
