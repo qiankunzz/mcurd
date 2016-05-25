@@ -8,7 +8,7 @@ angular.module('crudApp')
   //    {text:'Books', icon: 'book', url: 'book', authenticate: true},
   //    {text:'1085 Boylston', icon: 'book', url: 'book', authenticate: true},
   //    {text:'Units', icon: 'unit', url: 'unit', authenticate: true},
-      {text:'Units', icon: 'unit', url: 'unit', authenticate: true},
+      {text:'Your Units', icon: 'home', url: 'unit', authenticate: true},
 //      {text:'Contacts', icon: 'contacts', url: 'contact', authenticate: true},
 //      {text:'Customers', icon: 'people', url: 'customer', authenticate: true},
 //      {text:'Tasks', icon: 'assignment', url: 'task', authenticate: true},
