@@ -1,12 +1,12 @@
 <navbar></navbar>
 <md-content flex layout="column">
 <section layout="column" flex layout-align="start center">
-	<h1>Login</h1>
+	<h1 style="margin-top:50px">Login</h1>
 
-	<!-- remove in production -->
+	<!-- remove in production
 	  <p class="muted">User account is <code>user@codenx.com</code> / <code>codenx</code><br/>
 	  Admin account is <code>admin@codenx.com</code> / <code>codenx</code></p>
-  <!-- /remove in production -->
+   /remove in production -->
 
 	<p ng-show="vm.error" class="md-warn">{{vm.error.message}}</p>
 
@@ -49,6 +49,6 @@
 	</form>
 
 </section>
-<oauth-buttons></oauth-buttons>
+<!-- <oauth-buttons></oauth-buttons> -->
 </md-content>
 <footer></footer>
