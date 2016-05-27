@@ -13,7 +13,7 @@ angular.module('crudApp')
 //      {text:'Customers', icon: 'people', url: 'customer', authenticate: true},
 //      {text:'Tasks', icon: 'assignment', url: 'task', authenticate: true},
 //     {text:'Documentation', icon: 'description', url: 'documentation'},
-      {text:'Media Library', icon: 'photo_library', url: 'media', authenticate: true}
+//      {text:'Media Library', icon: 'photo_library', url: 'media', authenticate: true}
     ],
     auth : [
       {text:'login', icon: 'perm_identity', url: 'login'},

@@ -50,11 +50,11 @@ module.exports = function (grunt) {
         }
       }
     },
-    open: {
-      server: {
-        url: 'http://localhost:<%= express.options.port %>'
-      }
-    },
+    // open: {
+    //   server: {
+    //     url: 'http://localhost:<%= express.options.port %>'
+    //   }
+    // },
     watch: {
       babel: {
         files: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
@@ -624,7 +624,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'env:all', 'env:prod', 'express:prod', 'wait', 'open', 'express-keepalive']);
+      return grunt.task.run(['build', 'env:all', 'env:prod', 'express:prod', 'wait', 'express-keepalive']);
     }
 
     if (target === 'debug') {
@@ -650,7 +650,6 @@ module.exports = function (grunt) {
       'postcss',
       'express:dev',
       'wait',
-      'open',
       'watch'
     ]);
   });
