@@ -20,6 +20,7 @@ export default function(sequelize, DataTypes) {
     updatedAt: DataTypes.STRING,
     createdAt: DataTypes.STRING,
     modifiedBy: DataTypes.STRING,
-    unittype: DataTypes.STRING
+    unittype: DataTypes.STRING,
+    Url: DataTypes.STRING,
   });
 }

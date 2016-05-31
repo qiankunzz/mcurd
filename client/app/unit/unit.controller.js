@@ -10,6 +10,7 @@ angular.module('crudApp')
       {field: 'stars', title: 'Street Address', dataTypes:'text'},
       {field: 'language', title: 'City', dataType: 'select', options: ['Boston', 'Cambridge', 'New York']},
       {field: 'releaseDate', title: 'Installtion Date', dataType: 'date'},
+      {field: 'Url', title: 'Url', dataType: 'text'},
       {field: 'active', heading: 'Status', dataType: 'boolean'}
     ];
   });
